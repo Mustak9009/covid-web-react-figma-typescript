@@ -1,0 +1,77 @@
+@use "./module/module.scss";
+$border-radius-card: 8px;
+.CardsWithInfo { /*This element also inherit(style) from -> Center.scss file*/
+  max-width: 90%;
+  margin: auto;
+  gap: 0;
+  margin-top: 2rem;
+  &__text-paragraph-2 {
+    color: module.$Text-paragraph-color;
+    font-family: module.$Heading-font-family;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  &__Button-last-element {
+    width: 13rem !important;
+  }
+  
+  @include module.HomeResponsive{
+    &__right-side-text{
+      place-self: center start;
+    }
+  }
+}
+// Card style
+.Cards {
+  display: grid;
+  column-gap: 2rem;
+  place-content: center;
+  .Card {
+    background-color: white;
+    padding-bottom: 1rem;
+    border-radius: $border-radius-card;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 12rem;
+    place-self: end;
+    &__Img-header {
+      width: 100%;
+      height: 8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #dfdef8;
+      border-top-right-radius: $border-radius-card;
+      border-top-left-radius: $border-radius-card;
+      img {
+        width: 4rem;
+      }
+    }
+    &__text-bottom {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 1.2rem;
+      height: 7rem;
+      font-family: module.$Heading-font-family;
+      & p {
+        color: module.$Text-paragraph-color;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+.CardsWithInfo__just-for-background-color{
+  background-color: #F1F7FF;
+}
+.Card__right-side-two {
+  margin-bottom: 4rem;
+  @media (max-width: 532px) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 532px) {
+  .Cards {
+    grid-template-columns: auto auto;
+  }
+ 
+}

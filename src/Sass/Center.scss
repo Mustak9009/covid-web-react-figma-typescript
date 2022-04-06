@@ -1,0 +1,82 @@
+@use "./module/module.scss";
+.Center {
+  display: grid;
+  max-width: 99%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  & > img {
+    place-self: center;
+    width: module.$image-width;
+  }
+  &__text-right-side {
+    place-self: stretch start;
+    width: 80%;
+    & > :nth-child(1) {
+      font-weight: 800;
+      color: module.$Heading-text-color-bg;
+      font-size: clamp(1.8rem, 5vw, 2.2rem);
+      font-family: module.$Heading-font-family;
+    }
+    & > :nth-child(2) {
+      font-family: module.$Heading-font-family;
+      margin-top: 1.1em;
+      color: module.$Text-paragraph-color;
+    }
+    .Center__right-side-list-text-img {
+      margin-top: 2rem;
+      & > div {
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 37px auto;
+        align-items: center;
+        p {
+          font-family: module.$Heading-font-family;
+          color: module.$Text-paragraph-color;
+        }
+        img {
+          width: 1.7rem;
+        }
+      }
+    }
+    button {
+      border: none;
+      margin-top: 2rem;
+      border-radius: 17px;
+      height: 2.2rem;
+      width: 7rem;
+      background-color: module.$Heading-text-color-bg;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  @include module.HomeResponsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    & > img {
+      place-self: end;
+    }
+  }
+}
+//Information second -> part
+.Center-second-info {
+  gap: 0;
+  @include module.HomeResponsive {
+    margin: auto;
+    & > :first-child {
+      grid-column: 2;
+      place-self: center;
+    }
+    .Center__text-right-side {
+      grid-row: 1;
+      place-self: end;
+    }
+  }
+}
+@media (max-width: 75em) {
+  .Center__text-right-side {
+    place-self: center;
+  }
+  .Center__text-right-side > :nth-child(1) {
+    margin-top: 1rem;
+  }
+}

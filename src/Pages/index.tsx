@@ -1,0 +1,9 @@
+export {default as Home} from "./Page/Home";
+export {default as About} from "./Page/About";
+export {default as Center} from "./Page/Center";
+export {default as Reports} from "./Page/Reports";
+export {default as Symptoms} from "./Page/Symptoms";
+export {default as MreInfo} from "./Page/MreInfo";
+export {default as CardsWithInfo} from "./Page/CardsWithInfo";
+export {default as News} from "./Page/News";
+export {default as Footer} from "./Page/Footer";

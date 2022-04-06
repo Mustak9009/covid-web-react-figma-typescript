@@ -1,0 +1,81 @@
+// NavBar -> style                                                      //14/03/2022
+@use "./module/module" as res;
+$font-size-small: 18px;
+$font-size-large: clamp(2.5rem, 5vw, 2.4rem);
+header {
+  position: fixed;
+  width: 100%;
+}
+.NavBar {
+  &__Heading {
+    flex-grow: 1;
+    font-family: "Roboto";
+    font-size: $font-size-large;
+    margin-left: 0.5em;
+  }
+  &__links {
+    flex-grow: 2;
+    align-self: center;
+  }
+  ul li {
+    list-style: none;
+    margin: 2em;
+    a {
+      color: rgba(87, 83, 83, 1);
+      text-decoration: none;
+      font-family: "Rhodium Libre";
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 55em) {
+    &__Heading {
+      padding-top: 1rem;
+      padding-bottom: 0.5rem;
+    }
+    &__icon {
+      font-size: $font-size-large;
+      position: fixed;
+      right: 20px;
+      top: 15px;
+      z-index: 5;
+      cursor: pointer;
+    }
+    &__links {
+      position: absolute;
+      transform: translateY(-35rem);
+      transition: ease-in-out 0.6s;
+      width: 100%;
+      top: 0;
+      background-color: #f1f7ff;
+    }
+  }
+  @include res.NavResponsive {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1em;
+    ul li {
+      display: inline;
+    }
+    &__links {
+      text-align: right;
+    }
+    &__icon {
+      display: none;
+    }
+    & a {
+      font-size: $font-size-small;
+    }
+    
+  }
+}
+//Toggle -> NavBar
+.Mobile__NavBar .NavBar__links {
+  transform: translateY(0);
+}
+.scrollActive {
+  top: 0;
+  background-color: white !important;
+}

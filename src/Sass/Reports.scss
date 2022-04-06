@@ -1,0 +1,60 @@
+@use "./module/module.scss";
+.Report{
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    &__Heading-text{
+        color: module.$Heading-text-color-bg;
+        text-align: center;
+        font-family: module.$Heading-font-family;
+        margin-bottom: 1rem;
+        & >:nth-child(2){
+            color: module.$Text-paragraph-color;
+        }
+        & h1{
+            font-size:clamp(1.6rem, 5vw, 2rem); 
+            margin-bottom: 10px;
+        }
+    }
+}
+.Report-element{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    &__left-side-text{
+        display: grid;
+        gap: 2rem;
+        @media (min-width:548px){
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    & :is(.Report-element__article-1,.Report-element__article-2){
+        & h2{
+            color: module.$Heading-text-color-bg;
+            font-family: module.$Heading-font-family;
+            font-size: 1.2rem;
+        }
+        & > div{
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            & p{
+                font-family: module.$Heading-font-family;
+                color: module.$Text-paragraph-color;
+            }
+        }
+        & div img{
+            width: 1rem;
+            margin-right: 7px;
+        }
+    }
+    &__right-side-img{
+        img{
+            width: clamp(17rem, 80vw, 29rem);
+        }
+    }
+}
+@media (min-width:1033px){
+    .Report-element__left-side-text{
+        padding-top: 6rem;
+    }
+}

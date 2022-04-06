@@ -1,0 +1,55 @@
+@use "./module/module.scss";
+
+.FooterSection {
+    padding-bottom: 3rem;
+    background-color: #F1F7FF;
+}
+
+.FooterContent {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: module.$Heading-font-family;
+    justify-content: space-between;
+    &__body {
+        padding-top: 4rem;
+        width: 20rem;
+        margin-left: 2rem;
+        margin-right: 10px;
+        @media (max-width:539px){
+            width: 80%;
+        }
+        & p {
+            margin-top: 10px;
+            color: module.$Text-paragraph-color;
+        }
+        & img {
+            width: 2.5rem;
+            margin-top: 2.5rem;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
+
+    &__right-side-elements {
+        margin: 1rem;
+        font-family: module.$Heading-font-family;
+        margin-top: 3.5rem;
+        & li {
+            color: module.$Heading-text-color-bg;
+            list-style: none;
+            margin: 10px;
+            cursor: pointer;
+        }
+    }
+    &__right-side{
+        display: flex;
+        flex-wrap: wrap;
+        @media (min-width:896px) {
+            min-width: 55%;
+            justify-content:space-around;
+        }
+        @media (max-width:896px) {
+            width: 100%;
+        }
+    }
+}

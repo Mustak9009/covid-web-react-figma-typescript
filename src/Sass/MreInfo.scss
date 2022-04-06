@@ -1,0 +1,28 @@
+@use "./module/module.scss";
+.MoreInfo {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  &__items {
+    display: flex;
+    align-items: center;
+    margin: 1.2rem;
+    & > :first-child {
+      width: 3rem;
+      margin-right: 1rem;
+    }
+    & section {
+      & h2 {
+        color: module.$Heading-text-color-bg;
+        font-family: module.$Heading-font-family;
+      }
+      & p {
+        font-family: module.$Heading-font-family;
+        color: module.$Text-paragraph-color;
+        margin-top: 6px;
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/Pages/*","src/global.d.ts"]
 }
+//"src/Pages/*" -> All image use in this folder
+// "src/global.d.ts" -> Type declaration globally 

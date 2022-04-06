@@ -1,0 +1,76 @@
+@use "./module/module.scss";
+
+.HomePage {
+  width: 100%;
+  background-color: #f1f7ff;
+  display: grid;
+  @include module.HomeResponsive {
+    height: 70vh;
+    grid-template-columns: 60% 40%;
+    &__text-and-btn {
+      width: 65%;
+    }
+  }
+  &__text-and-btn {
+    font-family: "Roboto";
+    place-self: center end;
+    padding-right: 30px;
+    & > :first-child {
+      color: module.$Heading-text-color-bg;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    h1 {
+      color: module.$Heading-text-color-bg;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+    & > :nth-child(3) {
+      color: #7f8485;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+    & > :last-child {
+      background-color: module.$Heading-text-color-bg;
+      color: white;
+      padding: 8px;
+      border-radius: 15px;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 2rem;
+    }
+  }
+  &__image {
+    place-self: end;
+    img {
+      width: clamp(17rem, 80vw, 36rem);
+    }
+  }
+}
+@media (max-width: 75em) {
+  .HomePage {
+    padding-top: 5rem;
+    &__text-and-btn {
+      place-self: center;
+      padding-left: 2rem;
+      // Some extra for -> responsive (paragraph)
+      & > :nth-child(3) {
+        width: 70%;
+      }
+    }
+    &__image {
+      margin-bottom: 1.5rem;
+      place-self: end center;
+      grid-row: 1;
+    }
+    &__text-and-btn > :nth-child(3),
+    &__text-and-btn > :nth-child(1) {
+      font-size: 14px;
+    }
+  }
+}
+// Some extra for -> responsive (paragraph)
+@media (max-width: 55em) {
+  .HomePage__text-and-btn > :nth-child(3) {
+    width: 100%;
+  }
+}

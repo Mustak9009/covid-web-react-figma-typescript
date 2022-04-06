@@ -1,0 +1,15 @@
+$primary-color:black;
+$Heading-text-color-bg: rgba(112, 59, 196, 1);
+$image-width:clamp(17rem, 80vw, 35rem);
+$Heading-font-family:"Roboto";
+$Text-paragraph-color:#7F8485;
+@mixin NavResponsive {
+    @media (min-width:55em) {
+        @content;
+    }
+}
+@mixin HomeResponsive {
+    @media (min-width:75em) {
+        @content;
+    }
+}
